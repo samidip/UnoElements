@@ -1,0 +1,48 @@
+﻿<Page x:Class="UnoElements.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:controls="using:UnoElements.Controls"
+      Background="{ThemeResource BackgroundBrush}">
+
+  <Grid x:Name="Root"
+        Background="Transparent"
+        Tapped="OnRootTapped">
+
+    <!-- Skia stage (backdrop, floor, silhouettes, effects) is inserted here -->
+    <Grid x:Name="SceneHost" />
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="48,40,48,40">
+
+      <StackPanel Spacing="8">
+        <TextBlock x:Uid="MainPage.Eyebrow"
+                   Text="THE CLASSICAL ELEMENTS"
+                   Style="{StaticResource StageEyebrowTextStyle}" />
+        <TextBlock x:Uid="MainPage.Title"
+                   Text="Fire · Wind · Water · Earth"
+                   Style="{StaticResource StageTitleTextStyle}" />
+      </StackPanel>
+
+      <Viewbox Grid.Row="1"
+               MaxWidth="1500"
+               Stretch="Uniform"
+               VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal"
+                    Spacing="88"
+                    Padding="120,140,120,150">
+          <controls:ElementCard x:Name="FireCard" Number="01" Title="Fire" Tagline="HEAT · CHANGE" />
+          <controls:ElementCard x:Name="WindCard" Number="02" Title="Wind" Tagline="MOTION · BREATH" />
+          <controls:ElementCard x:Name="WaterCard" Number="03" Title="Water" Tagline="FLOW · RENEWAL" />
+          <controls:ElementCard x:Name="EarthCard" Number="04" Title="Earth" Tagline="MASS · GRAVITY" />
+        </StackPanel>
+      </Viewbox>
+
+      <StackPanel x:Name="Caption"
+                  Grid.Row="2"
+                  Spacing="8"
+                  MinHeight="64">
+        <TextBlock x:Name="CaptionTitle" Style="{StaticResource CaptionTitleTextStyle}" />
+        <TextBlock x:Name="CaptionBody" Style="{StaticResource CaptionBodyTextStyle}" />
+      </StackPanel>
+    </Grid>
+  </Grid>
+</Page>

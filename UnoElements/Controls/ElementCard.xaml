@@ -1,0 +1,27 @@
+<UserControl x:Class="UnoElements.Controls.ElementCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Grid RowDefinitions="Auto,Auto" RowSpacing="16">
+    <TextBlock Text="{x:Bind Number, Mode=OneWay}"
+               Style="{StaticResource ElementNumberTextStyle}" />
+
+    <Button x:Name="HitTarget"
+            Grid.Row="1"
+            Width="240"
+            Height="320"
+            Style="{StaticResource ElementCardButtonStyle}"
+            AutomationProperties.Name="{x:Bind Title, Mode=OneWay}"
+            Click="OnClick"
+            PointerEntered="OnPointerEntered"
+            PointerExited="OnPointerExited"
+            PointerCanceled="OnPointerExited">
+      <StackPanel x:Name="Labels" Spacing="6">
+        <TextBlock Text="{x:Bind Title, Mode=OneWay}"
+                   Style="{StaticResource ElementTitleTextStyle}" />
+        <TextBlock Text="{x:Bind Tagline, Mode=OneWay}"
+                   Style="{StaticResource ElementTagTextStyle}" />
+      </StackPanel>
+    </Button>
+  </Grid>
+</UserControl>

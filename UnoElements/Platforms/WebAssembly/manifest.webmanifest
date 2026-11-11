@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "UnoElements",
+  "display": "standalone",
+  "name": "UnoElements",
+  "short_name": "UnoElements",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
